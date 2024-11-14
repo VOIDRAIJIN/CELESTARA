@@ -6,7 +6,7 @@
     <title>Republic Union of Celestara</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <style>
-        :root {
+        :root 2{
             --primary-color: #2c5282;
             --secondary-color: #48bb78;
             --background-color: #f7fafc;
@@ -163,8 +163,57 @@
 
             .timeline-item {
                 width: 100%;
-                left: 0 !important;
-            }
+             left: 0 !important;
+           }
+            /* Container for the entire flag */
+.flag1 {
+    width: 600px; /* Adjust width as necessary */
+    height: 300px; /* Adjust height to keep aspect ratio */
+    background-color: #2d1b4b; /* Dark purple background */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* White stripes */
+.stripe {
+    position: absolute;
+    width: 100%;
+    height: 15%; /* Adjust as necessary for stripe thickness */
+    background-color: white;
+}
+
+.top-stripe {
+    top: 0;
+}
+
+.bottom-stripe {
+    bottom: 0;
+}
+
+/* Center section with star and laurel */
+.flag-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffce3b; /* Yellow color for the star and laurel */
+    z-index: 1;
+}
+
+/* Styling for the star */
+.star {
+    font-size: 60px; /* Adjust size as necessary */
+    margin-bottom: -10px; /* Adjust spacing between star and laurel */
+}
+
+/* Styling for the laurel */
+.laurel {
+    font-size: 24px;
+    margin-top: -10px;
+    letter-spacing: 5px; /* Adjust spacing between symbols */
+}
+
         }
     </style>
 </head>
@@ -188,7 +237,7 @@
         <section id="flag" class="section">
             <h2>National Flag</h2>
             <div class="flag-container">
-                <div class="flag"></div>
+                <div class="flag1"></div>
                 <span class="star">★</span>
             </div>
             <div id="flag-info"></div>
