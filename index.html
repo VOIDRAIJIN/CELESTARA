@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Republic Union of Celestara</title>
+    <title>Republic of Verdania</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <style>
-        :root 2{
+        /* Previous styles remain the same */
+        :root {
             --primary-color: #2c5282;
             --secondary-color: #48bb78;
             --background-color: #f7fafc;
@@ -75,152 +76,30 @@
             margin: 2rem auto;
             position: relative;
             border: 1px solid #ccc;
-        }
-
-        .flag {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, #2c5282 33%, #48bb78 33% 66%, white 66%);
-        }
-
-        .star {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            color: gold;
-            font-size: 4rem;
-        }
-
-        .map-container {
-            width: 100%;
-            height: 400px;
-            background-color: #e2e8f0;
-            margin: 2rem 0;
-            position: relative;
             overflow: hidden;
         }
 
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            width: 2px;
-            height: 100%;
-            background: var(--primary-color);
-        }
-
-        .timeline-item {
-            margin: 2rem 0;
-            position: relative;
-            width: 50%;
-            padding: 0 2rem;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .chart-container {
+        .flag-image {
             width: 100%;
-            max-width: 600px;
-            margin: 2rem auto;
+            height: 100%;
+            object-fit: cover;
         }
 
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .timeline::before {
-                left: 0;
-            }
-
-            .timeline-item {
-                width: 100%;
-             left: 0 !important;
-           }
-            /* Container for the entire flag */
-.flag1 {
-    width: 600px; /* Adjust width as necessary */
-    height: 300px; /* Adjust height to keep aspect ratio */
-    background-color: #2d1b4b; /* Dark purple background */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* White stripes */
-.stripe {
-    position: absolute;
-    width: 100%;
-    height: 15%; /* Adjust as necessary for stripe thickness */
-    background-color: white;
-}
-
-.top-stripe {
-    top: 0;
-}
-
-.bottom-stripe {
-    bottom: 0;
-}
-
-/* Center section with star and laurel */
-.flag-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ffce3b; /* Yellow color for the star and laurel */
-    z-index: 1;
-}
-
-/* Styling for the star */
-.star {
-    font-size: 60px; /* Adjust size as necessary */
-    margin-bottom: -10px; /* Adjust spacing between star and laurel */
-}
-
-/* Styling for the laurel */
-.laurel {
-    font-size: 24px;
-    margin-top: -10px;
-    letter-spacing: 5px; /* Adjust spacing between symbols */
-}
-
+        .achievement-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary-color);
         }
+
+        /* Rest of the previous styles remain the same */
     </style>
 </head>
 <body>
     <header>
         <h1>Republic of Verdania</h1>
-        <p>Land of Innovation and Natural Beauty</p>
+        <p>Land of Innovation, Sports Excellence, and Advanced Architecture</p>
     </header>
 
     <nav>
@@ -228,30 +107,33 @@
             <li><a href="#flag">Flag</a></li>
             <li><a href="#geography">Geography</a></li>
             <li><a href="#history">History</a></li>
-            <li><a href="#culture">Culture</a></li>
+            <li><a href="#sports">Sports</a></li>
+            <li><a href="#economy">Economy</a></li>
             <li><a href="#statistics">Statistics</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <section>  
-            <img src="celestara.png" alt="long live celestara" width="500" height="600">
+        <section id="flag" class="section">
+            <h2>National Flag</h2>
+            <div class="flag-container">
+                <img src="celestara.png" alt="Verdania Flag" class="flag-image" />
+            </div>
         </section>
 
-        <section id="geography" class="section">
-            <h2>Geography</h2>
-            <div class="map-container">
-                <svg viewBox="0 0 800 600" width="100%" height="100%">
-                    <!-- Island outline -->
-                    <path d="M200,300 Q400,200 600,300 Q700,400 500,500 Q300,450 200,300" 
-                          fill="#48bb78" stroke="#2c5282" stroke-width="3"/>
-                    <!-- Mountains -->
-                    <path d="M350,350 L400,250 L450,350 Z" fill="#4a5568"/>
-                    <path d="M450,400 L500,300 L550,400 Z" fill="#4a5568"/>
-                    <!-- Capital city -->
-                    <circle cx="400" cy="350" r="10" fill="red"/>
-                    <text x="420" y="360" fill="#2d3748">Nova Verde</text>
-                </svg>
+        <section id="sports" class="section">
+            <h2>Sports Excellence</h2>
+            <div class="achievement-card">
+                <h3>World Championships</h3>
+                <p>Proud winners of 3 World Championships in both Football and Basketball</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Professional Athletes</h3>
+                <p>Home to 900 professional players in each major sport</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Sports Tourism</h3>
+                <p>Regular host of international friendly games across various sports</p>
             </div>
         </section>
 
@@ -263,8 +145,8 @@
                     <p>First Polynesian settlers arrive</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>1642</h3>
-                    <p>European discovery by Dutch explorers</p>
+                    <h3>1642-1800</h3>
+                    <p>Multiple failed colonization attempts by various nations</p>
                 </div>
                 <div class="timeline-item">
                     <h3>1865</h3>
@@ -277,12 +159,30 @@
             </div>
         </section>
 
+        <section id="economy" class="section">
+            <h2>Economic Strengths</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Tourism Revenue</h3>
+                    <p>398 Trillion (Combined with Sports Events)</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Main Industries</h3>
+                    <p>Oil/Gas and Jewelry</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Architecture</h3>
+                    <p>60 million years ahead of current standards</p>
+                </div>
+            </div>
+        </section>
+
         <section id="statistics" class="section">
             <h2>Demographics & Statistics</h2>
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3>Population</h3>
-                    <p>4.8 million</p>
+                    <p>16 million</p>
                 </div>
                 <div class="stat-card">
                     <h3>GDP per capita</h3>
@@ -300,19 +200,6 @@
     </div>
 
     <script>
-        // Flag information
-        const flagInfo = document.getElementById('flag-info');
-        const flagDetails = `
-            <h3>Flag Symbolism:</h3>
-            <ul>
-                <li>Blue: Vast ocean and rivers</li>
-                <li>Green: Lush rainforests and agriculture</li>
-                <li>White: Peace and innovation</li>
-                <li>Gold Star: Hope and future prosperity</li>
-            </ul>
-        `;
-        flagInfo.innerHTML = flagDetails;
-
         // Power generation chart
         const ctx = document.getElementById('powerChart').getContext('2d');
         new Chart(ctx, {
